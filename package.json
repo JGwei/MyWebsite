@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "core-js": "^3.8.3",
+    "element-ui": "^2.15.10",
     "vue": "^2.6.14",
     "vue-router": "^3.5.1",
     "vuex": "^3.6.2"
@@ -43,7 +44,12 @@
     "parserOptions": {
       "parser": "@babel/eslint-parser"
     },
-    "rules": {}
+    "rules": {
+      "//no-unused-vars": "off",
+      "indent": [2],
+      "no-tabs": 0,
+      "space-before-function-paren": 0
+    }
   },
   "browserslist": [
     "> 1%",
