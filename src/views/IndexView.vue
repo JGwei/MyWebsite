@@ -12,8 +12,8 @@
             <div>
               <div>
                 <span>
-                  我是簡光偉，來自台灣高雄市的網頁開發菜鳥
-                  現在正在努力的學習前端相關技術
+                  我是Wei，來自台灣的網頁開發菜鳥
+                  現在正在努力的學習網頁開發相關技術
                 </span>
               </div>
               <div>
@@ -39,30 +39,56 @@
     <div class="home-card">
       <h1>技能</h1>
       <div>
+        <h3>前端技術</h3>
         <el-row :gutter="12">
           <el-col class="col-div" :span="8">
             <el-card shadow="always">
-              <span>Vue</span>
+              <div style="display: flex;justify-content: space-between;">
+                <span>Vue</span>
+                <span>40%</span>
+              </div>
+              <el-slider v-model="Vue" :show-tooltip="false" disabled></el-slider>
             </el-card>
           </el-col>
           <el-col class="col-div" :span="8">
             <el-card shadow="always">
-              <span>FastApi</span>
+              <div style="display: flex;justify-content: space-between;">
+                <span>Flask</span>
+                <span>20%</span>
+              </div>
+              <el-slider v-model="Flask" :show-tooltip="false" disabled></el-slider>
             </el-card>
           </el-col>
           <el-col class="col-div" :span="8">
             <el-card shadow="always">
-              <span>Laravel 8</span>
+              <div style="display: flex;justify-content: space-between;">
+                <span>Django</span>
+                <span>20%</span>
+              </div>
+              <el-slider v-model="Django" :show-tooltip="false" disabled></el-slider>
+            </el-card>
+          </el-col>
+        </el-row>
+      </div>
+      <div>
+        <h3>後端技術</h3>
+        <el-row :gutter="12">
+          <el-col class="col-div" :span="8">
+            <el-card shadow="always">
+              <div style="display: flex;justify-content: space-between;">
+                <span>FastApi</span>
+                <span>20%</span>
+              </div>
+              <el-slider v-model="FastApi" :show-tooltip="false" disabled></el-slider>
             </el-card>
           </el-col>
           <el-col class="col-div" :span="8">
             <el-card shadow="always">
-              <span>Flask</span>
-            </el-card>
-          </el-col>
-          <el-col class="col-div" :span="8">
-            <el-card shadow="always">
-              <span>Django</span>
+              <div style="display: flex;justify-content: space-between;">
+                <span>Laravel 8</span>
+                <span>30%</span>
+              </div>
+              <el-slider v-model="Laravel8" :show-tooltip="false" disabled></el-slider>
             </el-card>
           </el-col>
         </el-row>
@@ -120,60 +146,6 @@
         </div>
       </div>
     </div>
-
-    <div class="home-card">
-      <h1 class="email">寄信</h1>
-      <div class="email-div">
-        <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm email-form">
-          <el-form-item label="活动名称" prop="name">
-            <el-input v-model="ruleForm.name"></el-input>
-          </el-form-item>
-          <el-form-item label="活动区域" prop="region">
-            <el-select v-model="ruleForm.region" placeholder="请选择活动区域">
-              <el-option label="区域一" value="shanghai"></el-option>
-              <el-option label="区域二" value="beijing"></el-option>
-            </el-select>
-          </el-form-item>
-          <el-form-item label="活动时间" required>
-            <el-col :span="11">
-              <el-form-item prop="date1">
-                <el-date-picker type="date" placeholder="选择日期" v-model="ruleForm.date1" style="width: 100%;"></el-date-picker>
-              </el-form-item>
-            </el-col>
-            <el-col class="line" :span="2">-</el-col>
-            <el-col :span="11">
-              <el-form-item prop="date2">
-                <el-time-picker placeholder="选择时间" v-model="ruleForm.date2" style="width: 100%;"></el-time-picker>
-              </el-form-item>
-            </el-col>
-          </el-form-item>
-          <el-form-item label="即时配送" prop="delivery">
-            <el-switch v-model="ruleForm.delivery"></el-switch>
-          </el-form-item>
-          <el-form-item label="活动性质" prop="type">
-            <el-checkbox-group v-model="ruleForm.type">
-              <el-checkbox label="美食/餐厅线上活动" name="type"></el-checkbox>
-              <el-checkbox label="地推活动" name="type"></el-checkbox>
-              <el-checkbox label="线下主题活动" name="type"></el-checkbox>
-              <el-checkbox label="单纯品牌曝光" name="type"></el-checkbox>
-            </el-checkbox-group>
-          </el-form-item>
-          <el-form-item label="特殊资源" prop="resource">
-            <el-radio-group v-model="ruleForm.resource">
-              <el-radio label="线上品牌商赞助"></el-radio>
-              <el-radio label="线下场地免费"></el-radio>
-            </el-radio-group>
-          </el-form-item>
-          <el-form-item label="活动形式" prop="desc">
-            <el-input type="textarea" v-model="ruleForm.desc"></el-input>
-          </el-form-item>
-          <el-form-item>
-            <el-button type="primary" @click="submitForm('ruleForm')">立即创建</el-button>
-            <el-button @click="resetForm('ruleForm')">重置</el-button>
-          </el-form-item>
-        </el-form>
-      </div>
-    </div>
   </div>
 </template>
 
@@ -182,41 +154,10 @@ export default {
   data() {
     return {
       Vue: 40,
+      Flask: 20,
+      Django: 20,
       FastApi: 20,
-      ruleForm: {
-        name: '',
-        region: '',
-        date1: '',
-        date2: '',
-        delivery: false,
-        type: [],
-        resource: '',
-        desc: ''
-      },
-      rules: {
-        name: [
-          { required: true, message: '请输入活动名称', trigger: 'blur' },
-          { min: 3, max: 5, message: '长度在 3 到 5 个字符', trigger: 'blur' }
-        ],
-        region: [
-          { required: true, message: '请选择活动区域', trigger: 'change' }
-        ],
-        date1: [
-          { type: 'date', required: true, message: '请选择日期', trigger: 'change' }
-        ],
-        date2: [
-          { type: 'date', required: true, message: '请选择时间', trigger: 'change' }
-        ],
-        type: [
-          { type: 'array', required: true, message: '请至少选择一个活动性质', trigger: 'change' }
-        ],
-        resource: [
-          { required: true, message: '请选择活动资源', trigger: 'change' }
-        ],
-        desc: [
-          { required: true, message: '请填写活动形式', trigger: 'blur' }
-        ]
-      }
+      Laravel8: 30
     }
   },
   methods: {
@@ -239,7 +180,9 @@ export default {
 
 <style scoped lang="scss">
 .home{
+  position: relative;
   padding: 60px;
+  height: 100%;
 }
 h1,h2{
   margin: 0;

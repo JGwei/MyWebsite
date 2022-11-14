@@ -5,31 +5,57 @@
           <el-menu style="line-height:20px;text-align:right;font-size:40px;">
             <i :class="judefullwidth ? 'el-icon-s-fold' : 'el-icon-s-unfold'" @click="LeftMenu"></i>
           </el-menu>
+          <router-link to="/">
+            <el-menu-item>
+              <i class="el-icon-s-home"></i>
+              <span slot="title">首頁</span>
+            </el-menu-item>
+          </router-link>
+
+          <router-link to="/Works">
           <el-menu-item>
-            <i class="el-icon-menu"></i>
-            <span slot="title">首頁</span>
-          </el-menu-item>
-          <el-menu-item>
-            <i class="el-icon-menu"></i>
-            <span slot="title">關於我</span>
-          </el-menu-item>
-          <el-menu-item>
-            <i class="el-icon-menu"></i>
-            <span slot="title">經歷</span>
-          </el-menu-item>
-          <el-menu-item>
-            <i class="el-icon-menu"></i>
-            <span slot="title">作品</span>
-          </el-menu-item>
+              <i class="el-icon-paperclip"></i>
+              <span slot="title">作品</span>
+            </el-menu-item>
+          </router-link>
+
+          <router-link to="/ContactMe">
+            <el-menu-item>
+              <i class="el-icon-chat-dot-round"></i>
+              <span slot="title">聯絡我</span>
+            </el-menu-item>
+          </router-link>
         </el-menu>
       </div>
+
       <div :style="test ? 'display: none;' : 'display: block;'">
         <el-drawer
-          title="我是标题"
           :visible.sync="props.drawer"
           :direction="direction"
-          :before-close="handleClose">
-          <span>我来啦!</span>
+          size="100%"
+        >
+          <el-menu>
+            <router-link to="/" >
+              <el-menu-item @click="handleClose">
+                <i class="el-icon-s-home"></i>
+                <span slot="title">首頁</span>
+              </el-menu-item>
+            </router-link>
+
+            <router-link to="/Works" >
+              <el-menu-item @click="handleClose">
+                <i class="el-icon-paperclip"></i>
+                <span slot="title">作品</span>
+              </el-menu-item>
+            </router-link>
+
+            <router-link to="/ContactMe" >
+              <el-menu-item @click="handleClose">
+                <i class="el-icon-chat-dot-round"></i>
+                <span slot="title">聯絡我</span>
+              </el-menu-item>
+            </router-link>
+          </el-menu>
         </el-drawer>
       </div>
     </div>
@@ -67,21 +93,27 @@ export default {
     }
   },
   created() {
-    console.log(this.props.judefullwidth)
-    console.log(this.props.testfullwidth)
   },
   setup (props) {
     return { props }
   }
 }
 </script>
-<style>
+<style scoped>
+.el-menu-item{
+  font-size: 24px;
+}
+</style>
+<style lang="scss">
+.el-menu-item.is-active{
+  color: black !important;
+}
 .el-menu-vertical-demo:not(.el-menu--collapse) {
-    width: 200px;
-    min-height: 400px;
+  width: 200px;
+  min-height: 400px;
 }
 /* 新增 */
 .el-menu--collapse{
-    height: 100%;
+  height: 100%;
 }
 </style>
