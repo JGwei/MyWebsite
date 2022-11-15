@@ -1,12 +1,13 @@
 <template>
   <div id="app">
-    <el-container>
+    <backtop/>
+    <el-container class="container">
       <leftaside class="el-aside" :judefullwidth="judefullwidth" :drawer="drawer" :test="test" :testfullwidth="testfullwidth" @CloseLeftMenu="CloseLeftMenu" @CloseDrawer="CloseDrawer"/>
       <el-container>
         <el-header>
           <div style="display:flex">
             <span @click="OpenDrawer" :class="testfullwidth ? 'menu-open' : 'menu-close'"><i class="el-icon-s-operation"></i></span>
-            <h1 class="Header-title">  Wei 的個人網站</h1>
+            <h1 class="Header-title"> <router-link to="/"> Wei 的個人網站 </router-link> </h1>
           </div>
         </el-header>
         <el-main class="main">
@@ -15,8 +16,8 @@
         <el-footer>
           <div>
             <div style="display: flex;flex-direction: column;">
-              <span>此網站僅是測試，如有侵權請 <router-link to="/ContactMe" >聯絡我</router-link> ，會立即下架該相關資訊</span>
-              <span>信箱 : test@gmail.com</span>
+              <span>此網站僅是測試，如有侵權請 <router-link to="/ContactMe" style="color:cornflowerblue">聯絡我</router-link> ，會立即下架該相關資訊</span>
+              <span>信箱 : weiwebsite1115@gmail.com </span>
             </div>
             <div>
               Copyright © {{ year }} {{ owner }}. All rights reserved.
@@ -31,10 +32,12 @@
 <script>
 import leftaside from '@/components/LeftAside'
 import { RouterLink } from 'vue-router'
+import backtop from '@/components/BacktopC'
 export default {
   components: {
     leftaside,
-    RouterLink
+    RouterLink,
+    backtop
   },
   data() {
     return {
@@ -129,11 +132,19 @@ export default {
 
 body > .el-container {
   margin-bottom: 40px;
-
 }
 
 .el-container{
   min-height: 100%;
+  position: relative;
+}
+
+.el-card{
+  border-radius: 0.55rem !important;
+}
+
+.container{
+  min-height: 100vh;
   position: relative;
 }
 

@@ -5,6 +5,8 @@ import index from '@/views/IndexView.vue'
 
 import ContactMe from '@/views/ContactMe.vue'
 
+import Works from '@/views/WorksView.vue'
+
 // ElementUI
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
@@ -34,6 +36,15 @@ const routes = [
     },
     meta: {
       title: '聯絡我'
+    }
+  },
+  {
+    path: '/Works',
+    components: {
+      main: Works
+    },
+    meta: {
+      title: '作品'
     }
   }
 ]

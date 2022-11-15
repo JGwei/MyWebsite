@@ -48,6 +48,7 @@
                 <span>40%</span>
               </div>
               <el-slider v-model="Vue" :show-tooltip="false" disabled></el-slider>
+              <el-button type="text" class="button"> <a href="https://v2.cn.vuejs.org/index.html" class="link" target="_blank">前往</a> </el-button>
             </el-card>
           </el-col>
           <el-col class="col-div" :span="8">
@@ -57,6 +58,7 @@
                 <span>20%</span>
               </div>
               <el-slider v-model="Flask" :show-tooltip="false" disabled></el-slider>
+              <el-button type="text" class="button"> <a href="https://flask.palletsprojects.com/en/2.2.x/" class="link" target="_blank">前往</a> </el-button>
             </el-card>
           </el-col>
           <el-col class="col-div" :span="8">
@@ -66,6 +68,7 @@
                 <span>20%</span>
               </div>
               <el-slider v-model="Django" :show-tooltip="false" disabled></el-slider>
+              <el-button type="text" class="button"> <a href="https://docs.djangoproject.com/en/4.1/" class="link" target="_blank">前往</a> </el-button>
             </el-card>
           </el-col>
         </el-row>
@@ -80,6 +83,7 @@
                 <span>20%</span>
               </div>
               <el-slider v-model="FastApi" :show-tooltip="false" disabled></el-slider>
+              <el-button type="text" class="button"> <a href="https://fastapi.tiangolo.com/zh/" class="link" target="_blank">前往</a> </el-button>
             </el-card>
           </el-col>
           <el-col class="col-div" :span="8">
@@ -89,6 +93,7 @@
                 <span>30%</span>
               </div>
               <el-slider v-model="Laravel8" :show-tooltip="false" disabled></el-slider>
+              <el-button type="text" class="button"> <a href="https://laravel.tw/" class="link" target="_blank">前往</a> </el-button>
             </el-card>
           </el-col>
         </el-row>
@@ -101,22 +106,16 @@
         <div class="work-div-div">
           <h3>2022</h3>
           <el-timeline>
-            <el-timeline-item timestamp="2018/4/12" placement="top">
+            <el-timeline-item timestamp="2022/07/01~2022/09/30" placement="top">
               <el-card>
-                <h4>更新 Github 模板</h4>
-                <p>王小虎 提交于 2018/4/12 20:46</p>
+                <h4>暑期實習</h4>
+                <p>Wei 提交于 2022/11/15</p>
               </el-card>
             </el-timeline-item>
-            <el-timeline-item timestamp="2018/4/3" placement="top">
+            <el-timeline-item timestamp="2022/01/01~2022/06/30" placement="top">
               <el-card>
-                <h4>更新 Github 模板</h4>
-                <p>王小虎 提交于 2018/4/3 20:46</p>
-              </el-card>
-            </el-timeline-item>
-            <el-timeline-item timestamp="2018/4/2" placement="top">
-              <el-card>
-                <h4>更新 Github 模板</h4>
-                <p>王小虎 提交于 2018/4/2 20:46</p>
+                <h4>校內工讀</h4>
+                <p>Wei 提交于 2022/11/15</p>
               </el-card>
             </el-timeline-item>
           </el-timeline>
@@ -124,22 +123,10 @@
         <div class="work-div-div">
           <h3>2021</h3>
           <el-timeline>
-            <el-timeline-item timestamp="2018/4/12" placement="top">
+            <el-timeline-item timestamp="2021/07/01~2022/12/31" placement="top">
               <el-card>
-                <h4>更新 Github 模板</h4>
-                <p>王小虎 提交于 2018/4/12 20:46</p>
-              </el-card>
-            </el-timeline-item>
-            <el-timeline-item timestamp="2018/4/3" placement="top">
-              <el-card>
-                <h4>更新 Github 模板</h4>
-                <p>王小虎 提交于 2018/4/3 20:46</p>
-              </el-card>
-            </el-timeline-item>
-            <el-timeline-item timestamp="2018/4/2" placement="top">
-              <el-card>
-                <h4>更新 Github 模板</h4>
-                <p>王小虎 提交于 2018/4/2 20:46</p>
+                <h4>校內工讀</h4>
+                <p>Wei 提交于 2022/11/15</p>
               </el-card>
             </el-timeline-item>
           </el-timeline>
@@ -182,11 +169,16 @@ export default {
 .home{
   position: relative;
   padding: 60px;
-  height: 100%;
+  height: auto;
 }
-h1,h2{
+h1,h2,h3,h4{
   margin: 0;
+  font-size: 28px;
 }
+h3{
+  text-align: center;
+}
+
 .home-card{
   margin-bottom: 20px;
   text-align: left;
@@ -237,7 +229,11 @@ h1,h2{
 
 @media screen and (max-width:1024px){
   .home{
-    padding: 20px;
+    padding: 0px;
+  }
+
+  .home-card{
+    padding: 0;
   }
 
   .about{
@@ -266,6 +262,14 @@ h1,h2{
   .el-timeline{
     padding: 0;
   }
+}
+.button {
+  padding: 0;
+  float: right;
+}
+
+.link{
+  color:cornflowerblue;
 }
 
 </style>
