@@ -73,19 +73,20 @@ export default {
   margin-bottom: 65px;
 
   .contact-div{
-    padding: 0 300px;
+    display: flex;
+    justify-content: center;
   }
-}
-.el-form-item__label{
-  color: white !important;
+  .demo-ruleForm{
+    width: 50%;
+  }
 }
 
 @media screen and (max-width: 1024px){
   .contact{
     padding: 0;
 
-    .contact-div{
-      padding: 0;
+    .demo-ruleForm{
+      width: 100%;
     }
   }
 }

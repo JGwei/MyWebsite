@@ -1,6 +1,6 @@
 <template>
     <div>
-      <div :style="test ? 'display: block;' : 'display: none;'">
+      <div :style="test ? 'display: block;' : 'display: none;'" style="height: 100%;">
         <el-menu class="el-menu-vertical-demo " @open="handleOpen" @close="handleClose" :collapse="judefullwidth">
           <el-menu style="line-height:20px;text-align:right;font-size:40px;">
             <i :class="judefullwidth ? 'el-icon-s-fold' : 'el-icon-s-unfold'" @click="LeftMenu"></i>
@@ -111,6 +111,9 @@ export default {
 .el-menu-vertical-demo:not(.el-menu--collapse) {
   width: 200px;
   min-height: 400px;
+}
+.el-menu-vertical-demo {
+  height: 100%;
 }
 /* 新增 */
 .el-menu--collapse{

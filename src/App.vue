@@ -2,23 +2,25 @@
   <div id="app">
     <backtop/>
     <el-container class="container">
-      <leftaside class="el-aside" :judefullwidth="judefullwidth" :drawer="drawer" :test="test" :testfullwidth="testfullwidth" @CloseLeftMenu="CloseLeftMenu" @CloseDrawer="CloseDrawer"/>
       <el-container>
-        <el-header>
+        <el-header style="box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);z-index: 1;">
           <div style="display:flex">
             <span @click="OpenDrawer" :class="testfullwidth ? 'menu-open' : 'menu-close'"><i class="el-icon-s-operation"></i></span>
             <h1 class="Header-title"> <router-link to="/"> Wei 的個人網站 </router-link> </h1>
           </div>
         </el-header>
         <el-main class="main">
-          <router-view name="main"/>
+          <leftaside class="el-aside" :judefullwidth="judefullwidth" :drawer="drawer" :test="test" :testfullwidth="testfullwidth" @CloseLeftMenu="CloseLeftMenu" @CloseDrawer="CloseDrawer"/>
+          <div style="width:100%;">
+            <router-view name="main"/>
+          </div>
         </el-main>
         <el-footer>
           <div>
             <div class="footer-div" style="">
               <span>此網站僅是測試，如有侵權請 <router-link to="/ContactMe" style="color:cornflowerblue">聯絡我</router-link> ，會立即下架該相關資訊</span>
               <span>信箱 : weiwebsite1115@gmail.com </span>
-              <span> 網站是使用 <router-link to="/" style="color: cornflowerblue;text-decoration: underline;"> Vue.js </router-link> 所撰寫 </span>
+              <span> 網站是使用 <a href="https://v2.cn.vuejs.org/index.html" target="_blank" style="color: cornflowerblue;text-decoration: underline;"> Vue.js </a> 所撰寫 </span>
             </div>
             <div>
               Copyright © {{ year }} {{ owner }}. All rights reserved.
@@ -107,7 +109,6 @@ export default {
 }
 
 .el-header, .el-footer {
-  background-color: #E9EEF3;
   color: #333;
   text-align: center;
   line-height: 60px;
@@ -117,21 +118,20 @@ export default {
 }
 
 .el-aside {
-  // background-color: #D3DCE6;
   color: #333;
   text-align: left;
   line-height: 200px;
+  height: 100%;
 }
 
 .el-main {
-  // background-color: #E9EEF3;
-  // color: #333;
-  background: linear-gradient(to bottom, #323232 0%, #3F3F3F 40%, #1C1C1C 150%), linear-gradient(to top, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.25) 200%);
-  color: white;
+  background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
   background-blend-mode: multiply;
   text-align: center;
   line-height: 40px;
   overflow: initial !important;
+  // 修改
+  display: flex !important;
 }
 
 body > .el-container {
@@ -171,7 +171,8 @@ body > .el-container {
   padding-right: 0 !important;
 }
 .main{
-  min-height:100%;
+  // min-height:100%;
+  padding: 0 !important;
 }
 
 .footer-div{
@@ -181,6 +182,9 @@ body > .el-container {
 @media screen and (max-width:992px) {
   .footer-div{
     word-break: break-all;
+  }
+  .main{
+    padding: 10px !important;
   }
 }
 </style>

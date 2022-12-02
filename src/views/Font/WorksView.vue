@@ -5,16 +5,22 @@
         <h1> {{ item.year }} </h1>
         <div class="website">
           <el-row :gutter="12">
-            <el-col :span="8" v-for="(item, index) in item.data" :key="index">
-              <el-card shadow="hover">
-                <div style="padding: 14px;">
-                  <span>{{ item.name }}</span>
-                  <div class="bottom clearfix">
-                    <el-button type="text" class="button"> <a :href="item.url" target="_blank"> 前往 </a> </el-button>
-                  </div>
-                </div>
-              </el-card>
-            </el-col>
+              <el-col :span="8" v-for="(item, index) in item.data" :key="index">
+                <el-tooltip :content="'點下前往   '+item.url" placement="top">
+                <a :href="item.url" target="_blank">
+                  <el-card shadow="hover">
+                    <div style="padding: 14px;">
+                      <div>
+                        <h2>{{ item.name }}</h2>
+                      </div>
+                      <!-- <div class="bottom clearfix">
+                        <el-button type="text" class="button"> <a :href="item.url" target="_blank"> 前往 </a> </el-button>
+                      </div> -->
+                    </div>
+                  </el-card>
+                </a>
+                </el-tooltip>
+              </el-col>
           </el-row>
         </div>
       </div>
@@ -52,6 +58,17 @@ export default {
               url: 'https://www.google.com/'
             }
           ]
+        },
+        {
+          year: '2020',
+          data:
+          [
+            {
+              icon: '',
+              name: '測試',
+              url: 'https://www.google.com/'
+            }
+          ]
         }
       ]
     }
@@ -62,6 +79,9 @@ export default {
 
 </script>
 <style lang="scss" scoped>
+h2{
+  margin: 0;
+}
 .Works{
   position: relative;
   padding: 60px;
@@ -92,6 +112,9 @@ export default {
 .clearfix:after {
   clear: both
 }
+.el-col-8{
+  margin: 10px 0;
+}
 
 @media screen and (max-width: 1024px){
   .Works{
@@ -99,7 +122,6 @@ export default {
   }
   .el-col-8{
     width: 100%;
-    margin: 10px 0;
   }
 }
 </style>

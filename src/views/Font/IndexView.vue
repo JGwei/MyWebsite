@@ -133,6 +133,7 @@
         </div>
       </div>
     </div>
+
   </div>
 </template>
 
@@ -144,9 +145,9 @@ export default {
       Flask: 20,
       Django: 20,
       FastApi: 20,
-      Laravel8: 30
+      Laravel8: 30,
 
-      // img: require('@/assets/頭像.jpg')
+      img: require('@/assets/頭像.jpg')
     }
   },
   methods: {
