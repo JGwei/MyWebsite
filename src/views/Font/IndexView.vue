@@ -4,7 +4,7 @@
       <h1>關於我</h1>
       <div class="about">
         <div class="about-div">
-          <el-avatar class="about-img" src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"></el-avatar>
+          <el-avatar class="about-img" :src="img"></el-avatar>
         </div>
 
         <div class="about-card">
@@ -145,6 +145,8 @@ export default {
       Django: 20,
       FastApi: 20,
       Laravel8: 30
+
+      // img: require('@/assets/頭像.jpg')
     }
   },
   methods: {
@@ -195,8 +197,8 @@ h3{
     text-align:center;
   }
   .about-img{
-    width:200px;
-    height:200px;
+    width:300px;
+    height:300px;
   }
 
   .about-card{

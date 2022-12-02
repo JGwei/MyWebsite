@@ -15,9 +15,10 @@
         </el-main>
         <el-footer>
           <div>
-            <div style="display: flex;flex-direction: column;">
+            <div class="footer-div" style="">
               <span>此網站僅是測試，如有侵權請 <router-link to="/ContactMe" style="color:cornflowerblue">聯絡我</router-link> ，會立即下架該相關資訊</span>
               <span>信箱 : weiwebsite1115@gmail.com </span>
+              <span> 網站是使用 <router-link to="/" style="color: cornflowerblue;text-decoration: underline;"> Vue.js </router-link> 所撰寫 </span>
             </div>
             <div>
               Copyright © {{ year }} {{ owner }}. All rights reserved.
@@ -81,7 +82,7 @@ export default {
         } else {
           this.judefullwidth = false
           this.testfullwidth = false
-
+          this.drawer = false
           this.test = true
         }
       }
@@ -123,8 +124,11 @@ export default {
 }
 
 .el-main {
-  background-color: #E9EEF3;
-  color: #333;
+  // background-color: #E9EEF3;
+  // color: #333;
+  background: linear-gradient(to bottom, #323232 0%, #3F3F3F 40%, #1C1C1C 150%), linear-gradient(to top, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.25) 200%);
+  color: white;
+  background-blend-mode: multiply;
   text-align: center;
   line-height: 40px;
   overflow: initial !important;
@@ -168,5 +172,15 @@ body > .el-container {
 }
 .main{
   min-height:100%;
+}
+
+.footer-div{
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (max-width:992px) {
+  .footer-div{
+    word-break: break-all;
+  }
 }
 </style>

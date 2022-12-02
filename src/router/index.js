@@ -1,11 +1,11 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-import index from '@/views/IndexView.vue'
+import index from '@/views/Font/IndexView.vue'
 
-import ContactMe from '@/views/ContactMe.vue'
+import ContactMe from '@/views/Font/ContactMe.vue'
 
-import Works from '@/views/WorksView.vue'
+import Works from '@/views/Font/WorksView.vue'
 
 // ElementUI
 import ElementUI from 'element-ui'

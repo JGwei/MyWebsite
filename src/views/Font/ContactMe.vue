@@ -76,6 +76,9 @@ export default {
     padding: 0 300px;
   }
 }
+.el-form-item__label{
+  color: white !important;
+}
 
 @media screen and (max-width: 1024px){
   .contact{
