@@ -10,6 +10,7 @@
   "dependencies": {
     "core-js": "^3.8.3",
     "element-ui": "^2.15.10",
+    "gh-pages": "^4.0.0",
     "vue": "^2.6.14",
     "vue-router": "^3.5.1",
     "vuex": "^3.6.2"
@@ -46,7 +47,9 @@
     },
     "rules": {
       "//no-unused-vars": "off",
-      "indent": [2],
+      "indent": [
+        2
+      ],
       "no-tabs": 0,
       "space-before-function-paren": 0
     }
