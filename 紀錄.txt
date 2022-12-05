@@ -1,0 +1,3 @@
+Vue 推上 github pages router model = history 時 
+要先 build 一次 把 dist 裡面的 index.html 複製一份到
+public 裡面新增的 404.html 上面 這樣刷新就不會錯誤了

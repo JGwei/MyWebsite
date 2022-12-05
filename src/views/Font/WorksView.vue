@@ -44,7 +44,7 @@ export default {
             {
               icon: '',
               name: '個人網站',
-              url: 'https://www.google.com/'
+              url: 'https://jgwei.github.io/React-MyWebsit/'
             }
           ]
         },
